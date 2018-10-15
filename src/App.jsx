@@ -18,14 +18,14 @@ class App extends Component {
               <div className="app">
                   <Toolbar />
 
-                  <Route path="/books" component={Sidenav} />
+                  <Route path="/books" render={props => <Sidenav topics={this.props.topics} {...props}/>} />
 
                   <Content>
                       <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/about" component={About} />
-                        <Route exact path="/books/:topic?" component={Books} />
-                        <Route path="/books/:topic/:book" component={Book} />
+                        <Route exact path="/books/:topic?" render={props => <Books books={this.props.books} {...props}/>} />
+                        <Route path="/books/:topic/:book"  render={props => <Book books={this.props.books} {...props}/>} />
                         <Route path="/login" component={Login} />
                         <Route component={NotFound} />
                       </Switch>

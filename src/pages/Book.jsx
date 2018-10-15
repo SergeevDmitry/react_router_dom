@@ -1,8 +1,6 @@
 import React from 'react';
 
-import books from '../data/books';
-
-function Book({ match }) {
+function Book({ match, books }) {
     const book = books.find(book => book.slug === match.params.book);
 
     return (
