@@ -2,8 +2,8 @@ import React from 'react';
 
 import books from '../data/books';
 
-function Book() {
-    const book = books.find(book => book.slug === 'learning-javascript');
+function Book({ match }) {
+    const book = books.find(book => book.slug === match.params.book);
 
     return (
         <main id="book">
@@ -13,7 +13,7 @@ function Book() {
 
                     <section className="mdc-card__primary">
                         <h1 className="mdc-card__title mdc-card__title--large">{book.title}</h1>
-                        
+
                         <p className="mdc-card__subtitle">{book.author}</p>
                         <p className="mdc-card__subtitle">{book.publisher}</p>
                         <p className="mdc-card__subtitle">{book.pages} стр.</p>

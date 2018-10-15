@@ -1,9 +1,11 @@
 import React from 'react';
 
-import books from '../data/books';
+import data from '../data/books';
 import Card from '../components/Card';
 
-function Books() {
+function Books({ match }) {
+    const books = match.params.topic ? data.filter(book => book.topic === match.params.topic) : data;
+
     return (
         <main id="books">
             <div className="mdc-layout-grid">

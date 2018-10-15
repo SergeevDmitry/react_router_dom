@@ -7,6 +7,7 @@ import Sidenav from './components/Sidenav';
 import Home from './pages/Home';
 import About from './pages/About';
 import Books from './pages/Books';
+import Book from './pages/Book';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 
@@ -23,7 +24,8 @@ class App extends Component {
                       <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/about" component={About} />
-                        <Route path="/books" component={Books} />
+                        <Route exact path="/books/:topic?" component={Books} />
+                        <Route path="/books/:topic/:book" component={Book} />
                         <Route path="/login" component={Login} />
                         <Route component={NotFound} />
                       </Switch>
