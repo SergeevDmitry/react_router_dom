@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import ToolbarLink from './ToolbarLink';
 
 function Toolbar({ user }) {
     return (
@@ -11,13 +11,13 @@ function Toolbar({ user }) {
 
                 <section className="mdc-toolbar__section mdc-toolbar__section--align-end">
                     <nav className="mdc-tab-bar">
-                        <Link to="/" className="mdc-tab">Главная</Link>
-                        <Link to="/about" className="mdc-tab">О проекте</Link>
-                        <Link to="/books" className="mdc-tab">Книги</Link>
+                        <ToolbarLink exact to="/" className="mdc-tab">Главная</ToolbarLink>
+                        <ToolbarLink to="/about" className="mdc-tab">О проекте</ToolbarLink>
+                        <ToolbarLink to="/books" className="mdc-tab">Книги</ToolbarLink>
                         {user ?
-                            <Link to="/logout" className="mdc-tab">Выйти</Link>
+                            <ToolbarLink to="/logout" className="mdc-tab">Выйти</ToolbarLink>
                             :
-                            <Link to="/login" className="mdc-tab">Войти</Link>
+                            <ToolbarLink to="/login" className="mdc-tab">Войти</ToolbarLink>
                         }
                     </nav>
                 </section>
