@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Toolbar from './components/Toolbar';
 import Content from './components/Content';
+import Sidenav from './components/Sidenav';
 import Home from './pages/Home';
 import About from './pages/About';
 import Books from './pages/Books';
@@ -15,6 +16,8 @@ class App extends Component {
             <Router>
               <div className="app">
                   <Toolbar />
+
+                  <Route path="/books" component={Sidenav} />
 
                   <Content>
                       <Switch>
